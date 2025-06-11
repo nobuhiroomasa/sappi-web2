@@ -1,0 +1,65 @@
+// src/components/NavCards.jsx
+import React from "react";
+import { motion } from "framer-motion";
+import WorksCarousel from "./WorksCarousel.jsx";
+
+const navItems = [
+  {
+    title: "作品紹介",
+    desc: "これまでのイラストや絵本作品を紹介します。",
+    link: "/works",
+    hasCarousel: true,
+  },
+  {
+    title: "展覧会情報",
+    desc: "最新の展覧会の日時・場所をお知らせします。",
+    link: "/exhibition",
+  },
+  {
+    title: "お知らせ",
+    desc: "イベントや新作情報などのお知らせ。",
+    link: "/news",
+  },
+  {
+    title: "経歴",
+    desc: "作家としての歩み・プロフィール。",
+    link: "/profile",
+  },
+];
+
+export default function NavCards() {
+  return (
+    <section className="nav-cards">
+      {navItems.map((item,i) => (
+        <motion.a
+         href={item.link} 
+         className="nav-card" 
+         key={item.title}
+         initial={{ opacity: 0, y: 40 }}
+         whileInView={{ opacity: 1, y: 0 }}
+         viewport={{ once: true, amount: 0.4 }}
+         transition={{ duration: 2.7, delay: i * 0.12 }}
+         >
+          <h2>{item.title}</h2>
+          <p>{item.desc}</p>
+        
+          {item.hasCarousel && (
+            <div
+                style={{ marginTop: "1rem" }}
+                onClick={e => {
+                    e.stopPropagation();
+                    e.preventDefault();
+                }}
+                onPointerDown={e => {
+                    e.stopPropagation();
+                    e.preventDefault();
+                }}
+            >
+                <WorksCarousel />
+            </div>
+            )}
+        </motion.a>
+      ))}
+    </section>
+  );
+}
