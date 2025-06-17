@@ -5,7 +5,7 @@ import WorksCarousel from "./WorksCarousel.jsx";
 
 const navItems = [
   {
-    title: "作品紹介",
+    title: "ギャラリー一覧",
     desc: "これまでのイラストや絵本作品を紹介します。",
     link: "/works",
     hasCarousel: true,
@@ -14,16 +14,13 @@ const navItems = [
     title: "展覧会情報",
     desc: "最新の展覧会の日時・場所をお知らせします。",
     link: "/exhibition",
+    hasTenzi:true,
   },
   {
-    title: "お知らせ",
-    desc: "イベントや新作情報などのお知らせ。",
-    link: "/news",
-  },
-  {
-    title: "経歴",
+    title: "さぴおライフ",
     desc: "作家としての歩み・プロフィール。",
     link: "/profile",
+    hasLife:true,
   },
 ];
 
@@ -44,6 +41,36 @@ export default function NavCards() {
           <p>{item.desc}</p>
         
           {item.hasCarousel && (
+            <div
+                style={{ marginTop: "1rem" }}
+                onClick={e => {
+                    e.stopPropagation();
+                    e.preventDefault();
+                }}
+                onPointerDown={e => {
+                    e.stopPropagation();
+                    e.preventDefault();
+                }}
+            >
+                <WorksCarousel />
+            </div>
+            )}
+          {item.hasTenzi && (
+            <div
+                style={{ marginTop: "1rem" }}
+                onClick={e => {
+                    e.stopPropagation();
+                    e.preventDefault();
+                }}
+                onPointerDown={e => {
+                    e.stopPropagation();
+                    e.preventDefault();
+                }}
+            >
+                <WorksCarousel />
+            </div>
+            )}
+          {item.hasLife && (
             <div
                 style={{ marginTop: "1rem" }}
                 onClick={e => {

@@ -2,14 +2,14 @@ import { useState, useEffect , useRef} from "react";
 
 const images = [
   "/public/split_(156x170)/image_(1-1).png",
-  "/public/split_(156x170)/image_(1-2).png",
+//   "/public/split_(156x170)/image_(1-2).png",
   "/public/split_(156x170)/image_(1-3).png",
   "/public/split_(156x170)/image_(1-4).png",
 //   "/public/split_(156x170)/image_(1-5).png",
   "/public/split_(156x170)/image_(1-6).png",
 //   "/public/split_(156x170)/image_(2-1).png",
   "/public/split_(156x170)/image_(2-2).png",
-  "/public/split_(156x170)/image_(2-3).png",
+//   "/public/split_(156x170)/image_(2-3).png",
   "/public/split_(156x170)/image_(2-4).png",
   "/public/split_(156x170)/image_(2-5).png",
   "/public/split_(156x170)/image_(2-6).png",

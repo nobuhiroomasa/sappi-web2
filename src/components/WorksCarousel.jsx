@@ -47,7 +47,8 @@
 // }
 
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const images = [
   { src: "/sappi-1.jpg", alt: "森の中のどうぶつたち", title: "森の中のどうぶつたち" },
@@ -57,17 +58,69 @@ const images = [
 
 export default function WorksCarousel() {
   const [idx, setIdx] = useState(0);
-  const prev = () => setIdx(i => (i === 0 ? images.length - 1 : i - 1));
-  const next = () => setIdx(i => (i === images.length - 1 ? 0 : i + 1));
+  const [direction, setDirection] = useState(0);
+
+
+  // 手動切替
+  const prev = () => {
+    setDirection(-1);
+    setIdx(i => (i === 0 ? images.length - 1 : i - 1));
+  };
+  const next = () => {
+    setDirection(1);
+    setIdx(i => (i === images.length - 1 ? 0 : i + 1));
+  };
+
+  // 自動切替
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setDirection(1);
+      setIdx(i => (i === images.length - 1 ? 0 : i + 1));
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
+
+    // アニメーション用バリアント
+    const variants = {
+        enter: d => ({
+          x: d > 0 ? 200 : -200,
+          opacity: 0,
+          position: "absolute",
+        }),
+        center: { x: 0, opacity: 1, position: "relative" },
+        exit: d => ({
+          x: d > 0 ? -200 : 200,
+          opacity: 0,
+          position: "absolute",
+        }),
+      };
 
   return (
-    <div style={{ display: "flex", alignItems: "center" }}>
-      <button type="button" onClick={prev}>&lt;</button>
-      <div style={{ width: 300, textAlign: "center" }}>
-        <img className = "art" src={images[idx].src} alt={images[idx].alt} style={{ width: "100%" }} />
+    <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+      <button style={{ border: "none", background: "transparent" }} type="button" onClick={prev}>
+        &lt;
+      </button>
+      <div style={{ width: 200, textAlign: "center", minHeight: 120, position: "relative", overflow: "hidden" }}>
+        <AnimatePresence initial={false} custom={direction}>
+          <motion.img
+            key={idx}
+            src={images[idx].src}
+            alt={images[idx].alt}
+            className="art"
+            style={{ width: "100%", borderRadius: 8 }}
+            custom={direction}
+            variants={variants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{ duration: 0.7, ease: "easeInOut" }}
+          />
+        </AnimatePresence>
         <div>{images[idx].title}</div>
       </div>
-      <button type="button" onClick={next}>&gt;</button>
+      <button style={{ border: "none", background: "transparent" }} type="button" onClick={next}>
+        &gt;
+      </button>
     </div>
   );
 }
