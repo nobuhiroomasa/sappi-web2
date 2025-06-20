@@ -88,6 +88,7 @@ body, html, #root {
 
 /* お知らせセクション */
 .news-section {
+  width: 900px;
   background: #fffdf7;
   margin: 2rem auto;
   padding: 2rem 1.5rem;
@@ -139,6 +140,50 @@ body, html, #root {
   z-index: 9999;         /* 他要素より最前面に */
 }
 
+.bg-hero {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.5s;
+  min-height: 100vh;
+  /* オーバーレイを被せたい場合は下で::after参照 */
+}
+
+
+/* 前景テキストを見やすくする半透明オーバーレイ例 */
+.bg-hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.36) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+
+.bg-hero-stack {
+  pointer-events: none;
+}
+.bg-hero-mobile {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.bg-hero {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.5s;
+  min-height: 100vh;
+}
+@media (max-width: 600px) {
+  .bg-hero {
+    background-position: center top;
+  }
+}
+
+
 /* レスポンシブ対応 */
 @media (max-width: 700px) {
   .nav-cards {
@@ -156,6 +201,9 @@ body, html, #root {
   }
   .hero-sub {
     font-size: 1rem;
+  }
+  .news-section{
+    width: 90vw;
   }
 }
 

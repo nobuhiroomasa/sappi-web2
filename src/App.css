@@ -133,7 +133,7 @@
 }
 
 .site-footer {
-  width: 100vw;
+  /* width: 100vw; */
   background: linear-gradient(90deg, #fdf6ee 0%, #fcc7b4 100%);
   color: #7a5540;
   text-align: left;

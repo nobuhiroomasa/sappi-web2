@@ -69,6 +69,41 @@
     color: #4d3e22;
     line-height: 1.6;
   }
+
+  .zoom-modal-close {
+    position: fixed;
+    top: 4vw;
+    right: 6vw;
+    z-index: 2240;
+    font-size: 2rem;
+    color: #fff;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .zoom-modal-bg {
+    position: fixed;
+    inset: 0;
+    background: rgba(20,20,20,0.75);
+    z-index: 2220;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: modalFadeIn 0.28s;
+  }
+  .zoom-modal-img {
+    box-shadow: 0 6px 48px #2228, 0 0 0 1.5px #fff3;
+    background: #fff;
+    border-radius: 24px;
+    cursor: zoom-out;
+    max-width: 92vw;
+    max-height: 85vh;
+    user-select: none;
+    pointer-events: all;
+    position: fixed;
+    z-index: 2222;
+  }
   
   @media (max-width: 800px) {
     .gallery-card {

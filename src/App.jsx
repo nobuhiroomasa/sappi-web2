@@ -35,23 +35,23 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 export default function App() {
-  const [showSplash, setShowSplash] = useState(false);
+  // const [showSplash, setShowSplash] = useState(false);
 
-  useEffect(() => {
-    const alreadyPlayed = localStorage.getItem("splashPlayed");
-    if (!alreadyPlayed) {
-      setShowSplash(true);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const alreadyPlayed = localStorage.getItem("splashPlayed");
+  //   if (!alreadyPlayed) {
+  //     setShowSplash(true);
+  //   }
+  // }, []);
 
-  const handleFinish = () => {
-    localStorage.setItem("splashPlayed", "true");
-    setShowSplash(false);
-  };
+  // const handleFinish = () => {
+  //   localStorage.setItem("splashPlayed", "true");
+  //   setShowSplash(false);
+  // };
 
-  if (showSplash) {
-    return <SplashAnimation onFinish={handleFinish} />;
-  }
+  // if (showSplash) {
+  //   return <SplashAnimation onFinish={handleFinish} />;
+  // }
 
   return (
     <BrowserRouter>

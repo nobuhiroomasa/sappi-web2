@@ -52,7 +52,7 @@ export default function NavCards() {
                     e.preventDefault();
                 }}
             >
-                <WorksCarousel />
+                {/* <WorksCarousel /> */}
             </div>
             )}
           {item.hasTenzi && (
@@ -67,7 +67,7 @@ export default function NavCards() {
                     e.preventDefault();
                 }}
             >
-                <WorksCarousel />
+                {/* <WorksCarousel /> */}
             </div>
             )}
           {item.hasLife && (
@@ -82,7 +82,7 @@ export default function NavCards() {
                     e.preventDefault();
                 }}
             >
-                <WorksCarousel />
+                {/* <WorksCarousel /> */}
             </div>
             )}
         </motion.a>
