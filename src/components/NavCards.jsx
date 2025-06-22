@@ -7,7 +7,7 @@ const navItems = [
   {
     title: "ギャラリー一覧",
     desc: "これまでのイラストや絵本作品を紹介します。",
-    link: "/works",
+    link: "/Gallery",
     hasCarousel: true,
   },
   {

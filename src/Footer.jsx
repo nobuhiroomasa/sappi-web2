@@ -6,7 +6,7 @@ export default function Footer() {
           <div className="footer-links">
             <a href="/about">このサイトについて</a>
             <a href="/goods">ギャラリー一覧</a>
-            <a href="/contact">お問い合わせ</a>
+            <a href="/ContactForm">お問い合わせ</a>
           </div>
           <div className="footer-sns">
             <a href="https://twitter.com/your_twitter" target="_blank" rel="noopener" aria-label="X (Twitter)">

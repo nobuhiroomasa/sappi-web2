@@ -177,6 +177,35 @@ body, html, #root {
   transition: background-image 0.5s;
   min-height: 100vh;
 }
+
+.scroll-box {
+  width: 100%;
+  max-width: 400px;      /* ボックス幅 */
+  height: 300px;         /* ボックスの高さ（必須）*/
+  overflow-y: auto;      /* 縦スクロールを有効に */
+  overflow-x: hidden;    /* 横スクロールは不要なら */
+  background: #fffdf8;
+  border-radius: 16px;
+  border: 1px solid #efc585;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.scroll-box::-webkit-scrollbar {
+  width: 8px;
+  background: #ffe9a8;
+  border-radius: 8px;
+}
+.scroll-box::-webkit-scrollbar-thumb {
+  background: #efc585;
+  border-radius: 8px;
+}
+
+/* Firefox用 */
+.scroll-box {
+  scrollbar-width: thin;
+  scrollbar-color: #efc585 #ffe9a8;
+}
 @media (max-width: 600px) {
   .bg-hero {
     background-position: center top;
