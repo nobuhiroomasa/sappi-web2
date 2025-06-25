@@ -1,24 +1,20 @@
-
-
 import React, { useState, useEffect } from "react";
-import Header from './Header';
-import Footer from './Footer';
+import Header from "./Header";
+import Footer from "./Footer";
 import SappioLifePage from "./pages/SappioLifePage";
 import GalleryPage from "./pages/GalleryPage";
 import ContactForm from "./pages/ContactForm";
-import Main from './main';
+import Main from "./main";
 import SplashAnimation from "./components/SplashAnimation"; // ← 追加
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 export default function App() {
+  const isProd = import.meta.env.MODE === "production";
+  const repoName = "/sappi-web/";
 
   return (
-
-
-
-    <BrowserRouter >
-
+    <BrowserRouter basename={isProd ? repoName : "/"}>
       <Header />
       <main>
         <Routes>
@@ -32,6 +28,4 @@ export default function App() {
       <Footer />
     </BrowserRouter>
   );
-
-
 }
