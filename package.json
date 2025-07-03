@@ -12,7 +12,7 @@
     "deploy": "gh-pages -d build"
   },
 
-  "homepage": "https://github.com/nobuhiroomasa/sappi-web.git",
+  "homepage": "https://github.com/nobuhiroomasa/sappi-web2.git",
 
   "dependencies": {
     "framer-motion": "^12.18.1",
