@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import SappioLifePage from "./pages/SappioLifePage";
 import GalleryPage from "./pages/GalleryPage";
 import ContactForm from "./pages/ContactForm";
+import AboutPage from "./pages/AboutPage";
 import Main from "./main";
 import SplashAnimation from "./components/SplashAnimation"; // ← 追加
 import "./App.css";
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="/life" element={<SappioLifePage />} />
           <Route path="/Gallery" element={<GalleryPage />} />
           <Route path="/ContactForm" element={<ContactForm />} />
+          <Route path="/AboutPage" element={<AboutPage />} />
           {/* 他のページルート */}
         </Routes>
       </main>

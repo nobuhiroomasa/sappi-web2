@@ -1,0 +1,92 @@
+.about-root {
+    min-height: 100vh;
+    background: #fefce8; /* やさしい黄 */
+    font-family: 'Yu Gothic', 'Segoe UI', 'Arial', sans-serif;
+    padding: 32px 0;
+  }
+  
+  .about-container {
+    max-width: 540px;
+    margin: 0 auto;
+    background: #fffef8;
+    border-radius: 18px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    padding: 42px 28px 36px 28px;
+    border-left: 8px solid #fde047;
+  }
+  
+  .about-title {
+    text-align: center;
+    color: #865200;
+    font-size: 2.1rem;
+    margin-bottom: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  .about-section {
+    margin-bottom: 24px;
+    color: #52390f;
+    font-size: 1.1rem;
+    line-height: 2;
+  }
+  
+  .about-subtitle {
+    color: #ba8629;
+    font-size: 1.17rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+  }
+  
+  .about-features {
+    padding-left: 10px;
+    margin-top: 4px;
+  }
+  
+  .about-features li {
+    margin-bottom: 4px;
+    font-size: 1rem;
+    color: #4e3a1c;
+  }
+  
+  .about-contact {
+    border-top: 1px solid #ffe6a4;
+    padding-top: 18px;
+    margin-top: 28px;
+    font-size: 1.05rem;
+  }
+  
+  .about-mail-link,
+  .about-insta-link {
+    color: #e0b02a;
+    text-decoration: underline dotted #e0b02a 1.5px;
+    margin: 0 6px;
+    transition: color 0.2s;
+  }
+  
+  .about-mail-link:hover,
+  .about-insta-link:hover {
+    color: #8a601a;
+    text-decoration: underline solid #8a601a 2px;
+  }
+  
+  /* スマホ対応 */
+  @media (max-width: 600px) {
+    .about-container {
+      max-width: 96vw;
+      padding: 18px 8vw 22px 8vw;
+      border-left-width: 4px;
+    }
+    .about-title {
+      font-size: 1.4rem;
+      margin-bottom: 11px;
+    }
+    .about-section {
+      font-size: 1rem;
+    }
+    .about-subtitle {
+      font-size: 1.02rem;
+    }
+  }
+  
