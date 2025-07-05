@@ -11,7 +11,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 export default function App() {
   const isProd = import.meta.env.MODE === "production";
-  const repoName = "/sappi-web";
+  const repoName = "/sappi-web2";
 
   return (
     <BrowserRouter basename={isProd ? repoName : "/"}>
