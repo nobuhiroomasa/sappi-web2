@@ -11,11 +11,9 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
-
   "homepage": "https://github.com/nobuhiroomasa/sappi-web2.git",
-
   "dependencies": {
-    "framer-motion": "^12.18.1",
+    "framer-motion": "^12.23.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.6.2"
