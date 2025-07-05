@@ -34,7 +34,7 @@ export default function Header() {
   return (
     <header className={`site-header ${show ? "" : "hide-header"}`}>
       <nav>
-        <Link to="/" className="logo">さぴおギャラリー</Link>
+        <Link to="/" className="logo">さぴおの部屋</Link>
         <ul className="nav-links">
         <li><Link to="/life">さぴおライフ</Link></li>
           <li><Link to="/Gallery">ギャラリー一覧</Link></li>
