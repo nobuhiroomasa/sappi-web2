@@ -12,7 +12,7 @@ const API_KEY = "ZJCe3LsWPv7N9HfHfvGrGIhXr7CiWnSexz4x";
 export default function Main() {
   const [images, setImages] = useState([]);
   const [bgIdx, setBgIdx] = useState(0);
-  const [splash, setSplash] = useState(true);
+  // const [splash, setSplash] = useState(true);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
 
   // 画像取得
@@ -44,9 +44,9 @@ export default function Main() {
     return () => clearInterval(timer);
   }, [images]);
 
-  if (splash) {
-    return <Splash onFinish={() => setSplash(false)} />;
-  }
+  // if (splash) {
+  //   return <Splash onFinish={() => setSplash(false)} />;
+  // }
   return (
     <HeroSection
       images={images}

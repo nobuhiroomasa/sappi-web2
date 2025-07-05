@@ -124,7 +124,19 @@
       font-size: 1.3rem;
     }
     .gallery-card {
-      width: 48vw;
+      width: 47vw;
+    }
+  }
+
+  @media (max-width: 280px) {
+    .gallery-root {
+      padding: 18px 0;
+    }
+    .gallery-title {
+      font-size: 1.3rem;
+    }
+    .gallery-card {
+      width: 2vw;
       margin: 0 auto;
     }
   }
