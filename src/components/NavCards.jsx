@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import WorksCarousel from "./WorksCarousel.jsx";
+import { Link } from "react-router-dom";
 
 const navItems = [
   {
@@ -19,21 +20,24 @@ const navItems = [
   {
     title: "さぴおライフ",
     desc: "作家としての歩み・プロフィール。",
-    link: "/profile",
+    link: "/life",
     hasLife:true,
   },
 ];
+
+const MotionLink = motion(Link);
 
 export default function NavCards() {
   return (
     <section className="nav-cards">
       {navItems.map((item,i) => (
-        <motion.a
-         href={item.link} 
+        <MotionLink
+         to={item.link} 
          className="nav-card" 
          key={item.title}
          initial={{ opacity: 0, y: 40 }}
-         whileInView={{ opacity: 1, y: 0 }}
+        //  whileInView={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
          viewport={{ once: true, amount: 0.4 }}
          transition={{ duration: 2.7, delay: i * 0.12 }}
          >
@@ -85,7 +89,7 @@ export default function NavCards() {
                 {/* <WorksCarousel /> */}
             </div>
             )}
-        </motion.a>
+        </MotionLink>
       ))}
     </section>
   );
