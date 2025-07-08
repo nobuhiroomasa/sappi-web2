@@ -1,0 +1,152 @@
+.exhibition-container {
+    min-height: calc(100vh - 160px); /* 160px→Header+Footerの高さ分で調整 */
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 16px;
+    background: #fff8f0;
+    border-radius: 2rem;
+    box-shadow: 0 2px 24px rgba(0,0,0,0.08);
+  }
+  
+  .exhibition-title {
+    font-size: 2rem;
+    font-family: 'Kiwi Maru', serif;
+    text-align: center;
+    margin-bottom: 32px;
+    color: #c9733a;
+    letter-spacing: 0.1em;
+  }
+  
+  .exhibition-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  
+  .exhibition-card {
+    background: #fff9f2;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    padding: 24px 18px 18px 18px;
+    margin-bottom: 32px;
+    text-align: center;
+    transition: box-shadow .18s;
+    position: relative;
+  }
+  
+  .exhibition-img-box {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .exhibition-img {
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    cursor: pointer;
+    transition: transform 0.23s cubic-bezier(.22,1,.36,1), box-shadow 0.23s;
+    outline: none;
+    border: 2px solid transparent;
+  }
+  
+  
+  .exhibition-info {
+    flex: 1;
+  }
+  
+  .exhibition-card-title {
+    margin: 0 0 6px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #79552a;
+    font-family: "Kiwi Maru", serif;
+  }
+  
+  .exhibition-description {
+    margin: 8px 0 0 0;
+    font-size: 1rem;
+    color: #4e3629;
+    font-family: "Kiwi Maru", serif;
+  }
+  
+  .exhibition-loading,
+  .exhibition-empty {
+    text-align: center;
+    color: #c9733a;
+    margin-top: 48px;
+    font-family: 'Kiwi Maru', serif;
+  }
+
+  .exhibition-img:hover,
+  .exhibition-img:focus {
+    transform: scale(1.08) translateY(-5px);
+    box-shadow: 0 8px 32px rgba(60,50,20,0.18);
+    border: 2px solid #ffe0b3;
+    z-index: 2;
+  }
+
+/* --- 画像の枚数で大きさを調整 --- */
+.img-count-1 { width: 360px; height: 240px; max-width: 80vw; }
+.img-count-2 { width: 220px; height: 155px; max-width: 48vw; }
+.img-count-3, .img-count-4 { width: 170px; height: 120px; max-width: 36vw; }
+.img-count-5, .img-count-6, .img-count-7, .img-count-8 { width: 110px; height: 85px; max-width: 26vw; }
+  
+
+/* モーダル拡大表示 */
+.modal-bg {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(20, 20, 20, 0.65);
+    z-index: 9999;
+    display: flex; justify-content: center; align-items: center;
+    animation: fadeIn .18s;
+  }
+  .modal-img {
+    max-width: 90vw;
+    max-height: 78vh;
+    border-radius: 18px;
+    box-shadow: 0 8px 44px rgba(0,0,0,0.18);
+    animation: popUp .2s;
+  }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes popUp { from { transform: scale(0.7); } to { transform: scale(1); } }
+  
+  /* レスポンシブ */
+  @media (max-width: 600px) {
+    .exhibition-container {
+      padding: 16px 2vw;
+      border-radius: 1.2rem;
+    }
+    .exhibition-card {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 12px 6px;
+    }
+    .exhibition-img-box {
+        gap: 8px;
+        padding-bottom: 6px;
+      }
+      .exhibition-img {
+        width: 110px;
+        height: 80px;
+        max-width: 70vw;
+      }
+    .exhibition-card-title {
+      font-size: 1.1rem;
+    }
+    .exhibition-description {
+      font-size: 0.95rem;
+    }
+
+    .exhibition-card { padding: 16px 6px 10px 6px; }
+    .img-count-1 { width: 96vw; height: 48vw; }
+    .img-count-2 { width: 46vw; height: 30vw; }
+    .img-count-3, .img-count-4 { width: 30vw; height: 18vw; }
+    .img-count-5, .img-count-6, .img-count-7, .img-count-8 { width: 22vw; height: 14vw; }
+    .modal-img { max-width: 98vw; max-height: 65vh; }
+  }
+  
